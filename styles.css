@@ -1525,7 +1525,7 @@ button {
 /* ==========================================================================
    RESPONSIVE & MOBILE-FIRST ERGONOMICS (ZERO OVERLAP GUARANTEE)
    ========================================================================== */
-@media (max-width: 1320px) {
+@media (max-width: 1380px) {
   .nav-ig-btn {
     display: none;
   }
