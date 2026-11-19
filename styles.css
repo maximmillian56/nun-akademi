@@ -1498,7 +1498,7 @@ button {
   gap: 0.75rem;
 }
 
-/* Desktop Floating WhatsApp Widget */
+/* Floating WhatsApp Widget (Sleek on Desktop, Compact Circle Icon on Mobile) */
 .floating-wa {
   position: fixed;
   bottom: 24px;
@@ -1506,20 +1506,21 @@ button {
   z-index: 90;
   display: flex;
   align-items: center;
-  gap: 0.65rem;
+  justify-content: center;
+  gap: 0.6rem;
   background: linear-gradient(135deg, #25d366, #128c7e);
   color: #fff;
-  padding: 0.85rem 1.35rem;
+  padding: 0.8rem 1.25rem;
   border-radius: 999px;
   font-weight: 700;
-  font-size: 0.92rem;
-  box-shadow: 0 15px 35px rgba(37, 211, 102, 0.45);
-  border: 2px solid rgba(255, 255, 255, 0.25);
+  font-size: 0.9rem;
+  box-shadow: 0 12px 28px rgba(37, 211, 102, 0.4);
+  border: 1.5px solid rgba(255, 255, 255, 0.25);
 }
 
-/* Mobile Bottom Sticky Action Bar (Ultra Easy for Non-Tech Users) */
-.mobile-sticky-bar {
-  display: none;
+.floating-wa:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 16px 36px rgba(37, 211, 102, 0.55);
 }
 
 /* ==========================================================================
@@ -1584,10 +1585,6 @@ button {
 }
 
 @media (max-width: 768px) {
-  body {
-    padding-bottom: 84px; /* Space for mobile bottom sticky bar */
-  }
-
   .top-ribbon {
     font-size: 0.78rem;
     padding: 0.5rem;
@@ -1691,53 +1688,18 @@ button {
     gap: 1.75rem;
   }
 
-  /* Hide desktop floating button & show thumb-friendly Mobile Sticky Bar */
+  /* Compact, non-intrusive circular WhatsApp button in bottom-right corner on mobile */
   .floating-wa {
+    width: 52px;
+    height: 52px;
+    padding: 0;
+    bottom: 18px;
+    right: 18px;
+    border-radius: 50%;
+  }
+
+  .floating-wa-text {
     display: none;
-  }
-
-  .mobile-sticky-bar {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    z-index: 95;
-    background: rgba(4, 9, 21, 0.96);
-    backdrop-filter: blur(16px);
-    -webkit-backdrop-filter: blur(16px);
-    border-top: 1.5px solid rgba(212, 175, 55, 0.45);
-    padding: 0.7rem 0.9rem;
-    display: grid;
-    grid-template-columns: 1.35fr 0.65fr;
-    gap: 0.65rem;
-    box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.75);
-  }
-
-  .mobile-bar-wa {
-    background: linear-gradient(135deg, #25d366, #128c7e);
-    color: #fff;
-    font-weight: 800;
-    font-size: 0.92rem;
-    padding: 0.85rem 0.75rem;
-    border-radius: 14px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0.45rem;
-    box-shadow: 0 6px 18px rgba(37, 211, 102, 0.4);
-  }
-
-  .mobile-bar-call {
-    background: linear-gradient(135deg, var(--gold-200), var(--gold-500));
-    color: var(--navy-950);
-    font-weight: 800;
-    font-size: 0.88rem;
-    padding: 0.85rem 0.6rem;
-    border-radius: 14px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0.35rem;
   }
 }
 
