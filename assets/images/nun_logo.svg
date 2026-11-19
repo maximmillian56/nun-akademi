@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" width="100%" height="100%">
+  <defs>
+    <radialGradient id="bgGrad" cx="50%" cy="35%" r="65%">
+      <stop offset="0%" stop-color="#15264d"/>
+      <stop offset="65%" stop-color="#091226"/>
+      <stop offset="100%" stop-color="#040814"/>
+    </radialGradient>
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fff4c8"/>
+      <stop offset="32%" stop-color="#ebd074"/>
+      <stop offset="68%" stop-color="#d4af37"/>
+      <stop offset="100%" stop-color="#967115"/>
+    </linearGradient>
+    <linearGradient id="silverGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="60%" stop-color="#e2e8f0"/>
+      <stop offset="100%" stop-color="#94a3b8"/>
+    </linearGradient>
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#d4af37" flood-opacity="0.35"/>
+    </filter>
+  </defs>
+
+  <!-- Outer Luxury Circle -->
+  <circle cx="120" cy="120" r="114" fill="url(#bgGrad)" stroke="url(#goldGrad)" stroke-width="5"/>
+  <circle cx="120" cy="120" r="106" fill="none" stroke="url(#goldGrad)" stroke-width="1" stroke-dasharray="4 4" opacity="0.6"/>
+
+  <!-- Islamic Arch Frame -->
+  <path d="M120 26 C86 48, 72 82, 74 114 C75 130, 84 142, 96 150 M120 26 C154 48, 168 82, 166 114 C165 130, 156 142, 144 150"
+        fill="none" stroke="url(#goldGrad)" stroke-width="4.5" stroke-linecap="round" filter="url(#glow)"/>
+  <path d="M120 34 C92 53, 80 83, 82 112 M120 34 C148 53, 160 83, 158 112"
+        fill="none" stroke="url(#goldGrad)" stroke-width="1.5" opacity="0.7"/>
+
+  <!-- Crescent & Star at Top -->
+  <path d="M122 46 A12 12 0 1 0 132 64 A10 10 0 1 1 122 46 Z" fill="url(#goldGrad)" filter="url(#glow)"/>
+  <polygon points="129,51 130.5,54.5 134,55 131.2,57.2 132,60.8 129,59 126,60.8 126.8,57.2 124,55 127.5,54.5" fill="#fff4c8"/>
+
+  <!-- Subtle Mosque Dome Silhouette inside Arch -->
+  <path d="M104 128 L104 114 C104 103, 120 96, 120 88 C120 96, 136 103, 136 114 L136 128"
+        fill="none" stroke="url(#goldGrad)" stroke-width="1.4" opacity="0.55"/>
+
+  <!-- Arabic Calligraphy Nun & Waw (ون) Stylized Bowl + Nuqta -->
+  <path d="M95 82 C85 104, 92 134, 120 134 C144 134, 152 112, 143 92 C140 110, 132 123, 118 123 C101 123, 94 106, 99 84 Z"
+        fill="url(#goldGrad)" filter="url(#glow)"/>
+  <!-- Nuqta (Diamond Dot of Nun) -->
+  <polygon points="124,72 131,79 124,86 117,79" fill="url(#goldGrad)" filter="url(#glow)"/>
+
+  <!-- Open Book (Mushaf Pages) -->
+  <path d="M120 158 C102 142, 76 135, 54 138 L62 128 C82 126, 104 133, 120 148 C136 133, 158 126, 178 128 L186 138 C164 135, 138 142, 120 158 Z"
+        fill="url(#silverGrad)"/>
+  <path d="M120 165 C100 149, 73 143, 48 147 L54 139 C77 136, 102 143, 120 158 C138 143, 163 136, 186 139 L192 147 C167 143, 140 149, 120 165 Z"
+        fill="url(#goldGrad)"/>
+
+  <!-- Typography: NUN AKADEMİ -->
+  <text x="120" y="194" text-anchor="middle" font-family="'Cormorant Garamond', Georgia, serif" font-size="30" font-weight="700" letter-spacing="5" fill="url(#goldGrad)">NUN</text>
+  <line x1="64" y1="208" x2="86" y2="208" stroke="url(#goldGrad)" stroke-width="1.2" opacity="0.8"/>
+  <text x="120" y="212" text-anchor="middle" font-family="'Plus Jakarta Sans', sans-serif" font-size="10.5" font-weight="700" letter-spacing="3.5" fill="#ebd074">AKADEMİ</text>
+  <line x1="154" y1="208" x2="176" y2="208" stroke="url(#goldGrad)" stroke-width="1.2" opacity="0.8"/>
+</svg>
