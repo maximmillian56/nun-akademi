@@ -28,6 +28,14 @@ document.addEventListener('DOMContentLoaded', () => {
         if (menuIcon) menuIcon.textContent = '☰';
       });
     });
+
+    // Close mobile menu when tapping anywhere outside the navbar
+    document.addEventListener('click', (e) => {
+      if (navLinks.classList.contains('open') && !navbar.contains(e.target)) {
+        navLinks.classList.remove('open');
+        if (menuIcon) menuIcon.textContent = '☰';
+      }
+    });
   }
 
   // 3. Interactive Elifba Letter Explorer (Smooth Scroll to Spotlight on Mobile)

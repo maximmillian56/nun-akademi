@@ -36,8 +36,15 @@
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 85px;
   font-size: 16px;
   -webkit-text-size-adjust: 100%;
+}
+
+/* Hide mobile-only menu items on desktop */
+.mobile-nav-icon,
+.mobile-menu-cta-group {
+  display: none;
 }
 
 body {
@@ -1533,6 +1540,29 @@ button {
 }
 
 @media (max-width: 1120px) {
+  .mobile-nav-icon {
+    display: inline-block;
+    width: 1.5rem;
+    text-align: center;
+    margin-right: 0.35rem;
+  }
+  .mobile-menu-cta-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.65rem;
+    margin-top: 0.5rem;
+    padding-top: 0.85rem;
+    border-top: 1px solid rgba(212, 175, 55, 0.25);
+  }
+  .mobile-menu-sub-btns {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.5rem;
+  }
+  .mobile-menu-sub-btns .btn {
+    padding: 0.65rem 0.4rem;
+    font-size: 0.8rem;
+  }
   .nav-links {
     display: none;
     position: absolute;
@@ -1542,20 +1572,24 @@ button {
     background: rgba(4, 9, 21, 0.98);
     flex-direction: column;
     align-items: stretch;
-    padding: 1.25rem;
-    gap: 0.5rem;
-    border-bottom: 1.5px solid rgba(212, 175, 55, 0.4);
-    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.8);
+    padding: 1.15rem 1.25rem 1.4rem;
+    gap: 0.45rem;
+    border-bottom: 1.5px solid rgba(212, 175, 55, 0.45);
+    box-shadow: 0 28px 60px rgba(0, 0, 0, 0.88);
+    max-height: calc(100vh - 70px);
+    overflow-y: auto;
   }
   .nav-links.open {
     display: flex;
   }
   .nav-link {
-    display: block;
+    display: flex;
+    align-items: center;
     padding: 0.85rem 1rem;
-    background: rgba(255, 255, 255, 0.04);
-    border-radius: 12px;
-    font-size: 1rem;
+    background: rgba(255, 255, 255, 0.045);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 14px;
+    font-size: 0.98rem;
   }
   .mobile-menu-btn {
     display: inline-flex;
@@ -1585,54 +1619,150 @@ button {
 }
 
 @media (max-width: 768px) {
+  .container {
+    padding: 0 1rem;
+  }
+
   .top-ribbon {
     font-size: 0.78rem;
-    padding: 0.5rem;
+    padding: 0.48rem 0.65rem;
+  }
+  .top-ribbon-inner {
+    justify-content: space-between;
+    gap: 0.4rem;
   }
   .top-ribbon-inner span:nth-child(2) {
-    display: none; /* Keep top bar ultra clean on mobile */
+    display: none;
+  }
+
+  .navbar {
+    padding: 0.65rem 0;
+  }
+  .brand-logo-img-wrap {
+    width: 44px;
+    height: 44px;
+  }
+  .brand-title {
+    font-size: 1.24rem;
+  }
+  .brand-subtitle {
+    font-size: 0.6rem;
   }
 
   .nav-actions .btn-glass,
   .nav-actions .btn-gold {
-    display: none; /* Replaced by always-visible bottom bar */
+    display: none;
   }
 
   .hero {
-    padding: 2rem 0 3.5rem;
+    padding: 1.5rem 0 3rem;
+  }
+
+  .hero-grid {
+    gap: 2rem;
+  }
+
+  .hero-badges-row {
+    gap: 0.45rem;
+    margin-bottom: 1rem;
+  }
+  .free-trial-badge,
+  .age-pill-badge {
+    font-size: 0.74rem;
+    padding: 0.38rem 0.85rem;
   }
 
   .hero-title {
-    font-size: 2.15rem;
-    line-height: 1.16;
+    font-size: clamp(1.85rem, 7vw, 2.25rem);
+    line-height: 1.18;
+    margin-bottom: 0.9rem;
+  }
+
+  .hero-lead {
+    font-size: 0.96rem;
+    line-height: 1.6;
+    margin-bottom: 1.35rem;
+  }
+
+  .quick-start-box {
+    padding: 1.15rem;
+    border-radius: 18px;
+    margin-bottom: 1.35rem;
+  }
+  .quick-start-title {
+    font-size: 0.88rem;
+    line-height: 1.4;
+    align-items: flex-start;
   }
 
   .quick-age-buttons,
-  .hero-mini-badges,
   .pillars-grid,
   .siyer-timeline-grid,
   .age-curriculum-chips,
-  .format-options,
-  .hero-trust-strip {
+  .format-options {
     grid-template-columns: 1fr;
+  }
+
+  .quick-age-btn {
+    padding: 0.95rem 1rem;
+    border-radius: 14px;
   }
 
   .hero-cta-group {
     flex-direction: column;
     align-items: stretch;
+    gap: 0.75rem;
+    margin-bottom: 1.65rem;
   }
 
   .hero-cta-group .btn {
     width: 100%;
-    padding: 1.05rem 1.25rem;
-    font-size: 1rem;
+    padding: 1rem 1.15rem;
+    font-size: 0.96rem;
+  }
+
+  /* Trust strip cards cleanly boxed on mobile */
+  .hero-trust-strip {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+    padding-top: 1.25rem;
+  }
+  .trust-item {
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 14px;
+    padding: 0.85rem 1rem;
+    align-items: center;
   }
 
   .hero-arch-frame {
-    border-radius: 32px;
+    border-radius: 26px;
+    padding: 6px;
   }
   .hero-arch-inner {
-    border-radius: 26px;
+    border-radius: 21px;
+  }
+  .arch-quote-box {
+    padding: 1rem 1.1rem;
+  }
+  .arch-quote-box p {
+    font-size: 1.04rem;
+  }
+
+  .hero-mini-badges {
+    grid-template-columns: 1fr;
+    gap: 0.65rem;
+  }
+
+  .vision-header {
+    margin-bottom: 2.1rem;
+  }
+  .section-title {
+    font-size: clamp(1.75rem, 6.5vw, 2.2rem);
+    line-height: 1.2;
+  }
+  .section-subtitle {
+    font-size: 0.95rem;
   }
 
   .pillars-section,
@@ -1641,9 +1771,10 @@ button {
   .vision-section,
   .steps-section,
   .faq-section {
-    padding: 3.75rem 0;
+    padding: 3.25rem 0;
   }
 
+  .pillar-card,
   .age-card-body,
   .format-banner,
   .elifba-interactive-wrap,
@@ -1651,50 +1782,157 @@ button {
   .logo-story-card,
   .process-card,
   .testimonial-card {
-    padding: 1.5rem;
+    padding: 1.35rem;
+    border-radius: 20px;
+  }
+
+  .pillar-card h3,
+  .age-card-body h3,
+  .manifesto-card h3 {
+    font-size: 1.55rem;
+  }
+
+  .age-floating-pill {
+    top: 10px;
+    left: 10px;
+    font-size: 0.76rem;
+    padding: 0.38rem 0.85rem;
   }
 
   .tabs-header {
     flex-direction: column;
     align-items: stretch;
+    gap: 0.55rem;
+    margin-bottom: 1.5rem;
   }
 
   .tab-btn {
     width: 100%;
     text-align: left;
-    padding: 1rem 1.25rem;
+    padding: 0.9rem 1.1rem;
+    font-size: 0.9rem;
+    border-radius: 14px;
   }
 
+  /* Clean 4-column Arabic letter buttons on mobile */
   .letters-grid {
     grid-template-columns: repeat(4, 1fr);
-    gap: 0.55rem;
+    gap: 0.5rem;
+  }
+  .letter-tile {
+    padding: 0.75rem 0.25rem;
+    border-radius: 14px;
+  }
+  .letter-arabic {
+    font-size: 1.85rem;
+  }
+  .letter-name {
+    font-size: 0.76rem;
   }
 
-  .letter-arabic {
-    font-size: 1.95rem;
+  .letter-spotlight {
+    padding: 1.4rem 1.15rem;
+    border-radius: 18px;
+  }
+  .spotlight-big-arabic {
+    font-size: 3.8rem;
+  }
+  .spotlight-title {
+    font-size: 1.45rem;
+  }
+  .spotlight-desc {
+    font-size: 0.92rem;
+  }
+
+  .sunnah-ui-card {
+    padding: 1.15rem;
+    border-radius: 16px;
   }
 
   .logo-showcase-top {
     flex-direction: column;
     text-align: center;
+    gap: 0.9rem;
+  }
+  .logo-svg-preview {
+    width: 96px;
+    height: 96px;
+  }
+  .meaning-item {
+    padding: 0.9rem 1rem;
+  }
+
+  .process-grid {
+    gap: 1rem;
+    margin-bottom: 2.75rem;
+  }
+
+  /* Numbered steps side-by-side header on mobile for compactness */
+  .process-card {
+    display: flex;
+    flex-direction: column;
+  }
+  .step-badge-num {
+    width: 38px;
+    height: 38px;
+    font-size: 1rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .faq-question {
+    padding: 1.1rem 1.15rem;
+    font-size: 0.95rem;
+  }
+  .faq-answer {
+    padding: 0 1.15rem 1.15rem;
+    padding-top: 0.85rem;
+    font-size: 0.9rem;
+  }
+
+  .cta-banner-section {
+    padding: 1rem 0 3.5rem;
+  }
+  .cta-master-card {
+    padding: 2.25rem 1.25rem;
+    border-radius: 22px;
+  }
+  .cta-buttons-grid {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .cta-buttons-grid .btn {
+    width: 100%;
+    padding: 0.95rem 1rem;
   }
 
   .device-icons-grid {
     grid-template-columns: repeat(2, 1fr);
   }
 
+  .site-footer {
+    padding: 2.75rem 0 1.75rem;
+  }
   .footer-grid {
     grid-template-columns: 1fr;
-    gap: 1.75rem;
+    gap: 1.65rem;
+    text-align: center;
+  }
+  .footer-col .brand-logo {
+    justify-content: center;
+  }
+  .footer-bottom {
+    flex-direction: column;
+    text-align: center;
+    gap: 0.5rem;
   }
 
   /* Compact, non-intrusive circular WhatsApp button in bottom-right corner on mobile */
   .floating-wa {
-    width: 52px;
-    height: 52px;
+    width: 50px;
+    height: 50px;
     padding: 0;
-    bottom: 18px;
-    right: 18px;
+    bottom: 16px;
+    right: 16px;
     border-radius: 50%;
   }
 
@@ -1703,14 +1941,18 @@ button {
   }
 }
 
-@media (max-width: 390px) {
+@media (max-width: 375px) {
   .brand-title {
-    font-size: 1.18rem;
+    font-size: 1.12rem;
   }
   .brand-subtitle {
-    font-size: 0.58rem;
+    font-size: 0.55rem;
   }
-  .letters-grid {
-    grid-template-columns: repeat(2, 1fr);
+  .mobile-menu-btn {
+    padding: 0.45rem 0.7rem;
+    font-size: 0.8rem;
+  }
+  .top-ribbon {
+    font-size: 0.72rem;
   }
 }
